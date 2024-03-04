@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="howtocss.css">
+    <!--Con esta libreria sacamos los iconos para el footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+    <!--Creado por Adrián Vázquez Sánchez-->
+</head>
+<body class="instalacion">
+    <header>
+        <!--Primero con la clase hero creo un header el cual se compone de un titulo y un subtitulo-->
+        <div class="hero" id="hero">
+            <h1>COMO MANDAR ARCHIVOS ENTRE MAQUINAS VIRTUALES</h1>
+                <p>HTML • CSS • Javascript</p>
+        </div>
+    </header>
+    <nav id="menu">
+        <!--Con el nav que se utiliza para definir una seccion de navegacion y los a href creo un menu con los diferentes apartados de la pagina-->
+        <a href="#1">Virtual Box</a>
+        <a href="#2">Maquina de Ubuntu</a>
+        <a href="#3">Ip de las maquinas</a>
+        <a href="#4">Configuración Maquina de Windows</a>
+        <a href="#5">Paso de datos entre maquinas</a>
+        <span class="indicador" id="indicador"></span>
+    </nav>
+
+    <div class="secciones">
+        <div class="seccion"id=1>
+            <div class="card">
+                <!--Usamos seccion y card para crear recuadros al rededor de las paginas que son de diferente color y redondeadas las esquinas y que resalten del fondo principal-->
+                <h1>Virtual Box</h1>
+                <br>
+                <h2 class="subtitulos">Instalacion de virtual box y creacion de maquinas virtuales.</h2>
+                <br>
+                <br>
+                <iframe src="https://www.youtube.com/embed/90AeaF0Zejg?si=JNzMOmQldmPBIwkL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p>Para comenzar con la descarga de virtualbox debes seguir los pasos del video que te aparece aqui arriba, en el cual se explica paso a paso como se instala, al final de esta pagina podeis encontrar los links que os dirigen a los archivos de descargas necesarios para este tutorial.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="secciones">
+        <div class="seccion"id=2>
+            <div class="card">
+                <h1>Maquina de Ubuntu</h1>
+                <br>
+                <h2 class="subtitulos">Primero instalamos la terminal en la maquina que preferamos en la maquina de ubuntu.</h2>
+                <br>
+                <img src="terminalinst.png" alt="">
+                <p>Despues de instalar la terminal, comenzamos escribiendo un su, tras poner la contraseña ponemos apt upgrade y  luego apt update para actualizar la maquina.</p>
+                <br>
+                <img src="primera parte ubuntu.png" alt="">
+                <p>Para comenzar con la descarga de virtualbox lo primero que debe hacer es clickar en la imagen que aparece en la esquina derecha de la pagina, la cual te manda directamente a la pagina de descarga del programa.
+                    Una vez que estas en la pagina lo primero que debe hacer es fijarte en el sistema operativo que tienes, y luego te dirigues al apartado que sale rodeado en la imagen que te aparece debajo de esta explicación
+                </p>
+                <br>
+                <img src="samba.png" alt="">
+                <p>Tras haber actualizado la maquina el siguiente paso es instalar samba.</p>
+                <br>
+                <img src="adduser winuser1.png" alt="">
+                <p>Despues de instalar samba, procedemos a crear un nuevo usuario, el cual vamos a usar para conectarnos y compartir los documentos.</p>
+                <br>
+                <img src="compartida.png" alt="">
+                <p>Luego con el su nos logeamos en el nuevo usuario, y vamos a su carpeta personas y creamos una carpeta compartida usando el comando mkdir compartida, y luego de crearla le damos permisos.</p>
+                <br>
+                <img src="vim.png" alt="">
+                <p>Instalamos vim con el comando apt-get install vim, una vez instalado, como root editamos el archivo de Configuración usando el comando Vim/etc/samba/smb.conf y despues al final de vim escribimos todo lo que aparece en la imagen.</p>
+                <br>
+                <img src="compartidaconfig.png" alt="">
+                <p>Tras haber escrito lo anteriormente mostrado pulsamos escape y escribimos :wq.</p>
+                <br>
+                <img src="añadirwinusersamba.png" alt="">
+                <p>En este paso lo que debemos hacer es añadir el winuser1 a los usuarios de samba y luego le ponemos contraseña y para eso usaremos el comando smbpasswd -a winuser1.</p>
+                <br>
+                <img src="archivocreadocapetacomp.png" alt="">
+                <p>Luego nos volvemos a cambiar al usuario winuser1 para crear archivos dentro de la carpeta compartida, añadiendo los comandos que aparecen en la imagen.</p>
+                <br>
+                <img src="resetsamba.png" alt="">
+                <p>Por ultimo para terminar con los pasos nos quedaría resetear el servicio samba desde el root para eso primero usamos el comando su para movernos y luego, systemctl restart smbd.service y ya estarían todos los pasos de la Configuración de ubuntu.</p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="secciones">
+        <div class="seccion"id=3>
+            <div class="card">
+                <h1>Ip de las maquinas</h1>
+                <img src="iplinux.png" alt="">
+                <p>Para saber cual es nuestra ip en ubuntu ponemos el comando ip a y nos la mostrara, y es la que esta coloreada en la imagen de amarillo: 10.0.2.15 </p>
+                <br>
+                <img src="ipwindows.png" alt="">
+                <p>Para saber cual es en windows abrimos primero el cmd y luego ponemos el comando ipconfig todo junto y donde pone dirreccion IPv4 es donde se ve nuestra ip que en este caso es: 10.0.2.4</p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="secciones">
+        <div class="seccion"id=4>
+            <div class="card">
+                <h1>Configuración Maquina de Windows</h1>
+                <img src="firewall.png" alt="">
+                <p>En la maquina de Windows lo unico que debemos configurar es que este activado dentro de Configuración avanzada del firewall las reglas de entrada que se muestran en la imagen.</p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="secciones">
+        <div class="seccion"id=5>
+            <div class="card">
+                <h1>Paso de datos entre Maquinas </h1>
+                <img src="ping windows.png" alt="">
+                <p>Una confirado el firewall y tras saber la ip de ambas maquinas hacemos un ping desde la maquina de windows que se realiza escribiendo el comando ping más la ip de la otra maquina para comprobar que esten conectadas entre si.</p>
+                <br>
+                <img src="pinglinux.png" alt="">
+                <p>Para realizar un ping desde ubuntu es el mismo comando pero en este caso no se finalizara solo, debemos finalizarlo nosotros manualmente mediante el comando de taclas Ctrl+C.</p>
+                <br>
+                <img src="abrircarpeta.png" alt="">
+                <p>Una vez que hemos comprobado que funciona correctamente los ping y las dos maquinas estan conectadas entre ellas, abrimos desde windows el ejecutar y escribimos el comando \\10.0.2.15 ya en mi caso esa es mi ip pero en el vuestro teneis que escribir \\más vuestra ip de ubuntu, y se abrira una carpeta donde arriba tiene que poner la ip\compartida que es el nombre de la carpeta, en mi caso no sale, pero si sigues bien todos los pasos deberia de salirte.</p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+         <div class="footer-row">
+            <div class="footer-links">
+                <h4>Instalaciones<h4>
+                    <!--Creamos una lista desordenada en la cual añadimos los enlaces para instalar lo necesario para seguir el tutorial -->
+                    <ul>
+                        <li><a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a></li>
+                        <li><a href="https://ubuntu.com/download/desktop">Ubuntu</a></li>
+                        <li><a href="https://www.microsoft.com/es-es/software-download/windows10">Instalador de windows 10</a></li>
+                    </ul>
+            </div>
+
+            <div class="footer-links">
+            <h4>Nuestras redes</h4>
+                <div class="social-link">
+                    <ul>
+
+                        <li><a href="https://github.com/adrianvsalbor"><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/adrian-vazquez-sanchez-3b47942b8/"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>    
+        </div>
+        </div>
+    </div>
+</footer>
+<script src="howtojs.js"></script>
+</body>
+</html>

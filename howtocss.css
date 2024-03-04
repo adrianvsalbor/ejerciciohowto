@@ -1,0 +1,209 @@
+/*Este css ha sido creado por Adrián Vázquez Sánchez*/
+html {
+	/*Lo utilizo para suavizar el desplazamiento de la pagina*/
+	scroll-behavior: smooth;
+}
+
+* {
+	/*Utilizo el asterisco para cambiar en toda las pagina estos estilos*/
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+  list-style: none;
+}
+
+body{
+	background: #f2f2f2;
+	font-family: 'Roboto', sans-serif;
+}
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a {
+	text-decoration: none;
+}
+iframe{
+	/*Edito el tamaño del iframe para ajustarlo a la pagina*/
+  width: 1500px;
+  height: 800px;
+}
+.colorwindows{
+  background-color: #C0CAAD;
+  color:black;
+  text-align: center;
+}
+.instalacion{
+  background-color: #FFD1D1;
+}
+.indexcolor{
+	/*Se utiliza para el color de la barra que muestra en que pagina estas desde el menu de arriba*/
+  background-color: #654C4F;
+}
+ img{
+  transition: .5s ease;
+  object-fit: cover;
+  height: 800px;
+  width: 200px;
+
+}
+.subtitulos{
+	/*Se utiliza para darle estilo a los subtitulos de cada uno de los apartados*/
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  text-align: left;
+}
+/*Utilizando los hero he creado la barra de menu de los diferentes puntos de la pagina*/
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 80px);
+}
+
+.hero h1 {
+	font-size: 60px;
+  color:#464242;
+}
+
+.hero p {
+	font-size: 30px;
+	text-transform: uppercase;
+	color: #d87e7e;
+  margin-top: 30px;
+}
+
+/*Todos los nav se utiliza para darle estilo a la barra de navegacion del menu*/
+nav {
+  z-index: 100;
+	background: #FF9494;
+	height: 80px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	display: flex;
+	position: sticky;
+	top: 0;
+	overflow: hidden;
+}
+
+nav a {
+	flex: 1;
+	height: 100%;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #000;
+	transition: .2s ease-in-out all;
+	font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
+nav a:hover {
+	background: #f38888;
+}
+
+nav .indicador {
+	width: 0px;
+	height: 7px;
+	background: #cd8b87;
+	position: absolute;
+	bottom: 0;
+	transition: .3s ease-out all;
+}
+/*Se utiliza para darle estilo a los diferentes recuadros en los que estan divididos los apartados de la pagina (virtual box, maquina de ubuntu, etc)*/
+.seccion {
+	min-height: 100vh;
+	max-width: 1600px;
+	width: 90%;
+	margin: auto;
+
+	padding-top: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.seccion .card {
+	background: #FF9494;
+	height: 90%;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.seccion h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.seccion p {
+	line-height: 38px;
+	margin-bottom: 40px;
+	color: #494949;
+	font-size: 20px;
+}
+
+.seccion img {
+	width: 100%;
+	vertical-align: top;
+	margin-bottom: 20px;
+}
+
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer{
+  background-color: #24262B;
+  padding: 80px 0;
+}
+.footer-row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-links{
+  width: 25%;
+  padding: 0 25px;
+}
+.footer-links h4{
+  font-size: 20px;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  font-weight: 500;
+  border-bottom: 2px solid #00C3FF;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.footer-links ul li a{
+  font-size: 18px;
+  text-decoration: none;
+  color: #BBBBBB;
+  display: block;
+  margin-bottom: 15px;
+  transition: all .3s ease;
+}
+.footer-links ul li a:hover{
+  color: #FFFFFF;
+  padding-left: 6px;
+}
+.social-links a{
+display: inline-block;
+min-height: 60px;
+width: 0px;
+background-color: rgba(255, 255, 255, 0.2);
+margin: 0 10px 10px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: #FFFFFF;
+transition: all .5s ease;
+}
+.social-links a:hover{
+  background-color: #00C3FF;
+}
